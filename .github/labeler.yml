@@ -1,4 +1,4 @@
 version: 1
 
 change:
-  - ".github/*"
+- ".github/*"
