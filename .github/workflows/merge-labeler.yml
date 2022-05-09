@@ -3,7 +3,7 @@ name: "Merge ready check"
 on:
   pull_request_review:
     types: [submitted]
-    branches:
+    branch:
       - development
 
 jobs:
@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: srvaroa/labeler@v0.8
         with:
-          config_path: .github/approved_labels.yml
+          config_path: labeler.yml
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

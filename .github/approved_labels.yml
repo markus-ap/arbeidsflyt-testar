@@ -1,7 +1,0 @@
-version: 1
-labels:
-  - label: "Merge ready"
-    path:
-      - "**/*"
-  - label: "Readme changed"
-    files: "README.md"
