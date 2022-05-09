@@ -3,3 +3,6 @@ labels:
   - label: "README changed"
     files:
       - "README.md"
+  - label: "Workflow change"
+    files:
+      - ".github/**/*"
