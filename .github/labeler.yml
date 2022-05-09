@@ -1,5 +1,4 @@
 version: 1
-labels:
-  - label: "Change"
-    files:
-      - ".github/*"
+
+change:
+  - ".github/*"
