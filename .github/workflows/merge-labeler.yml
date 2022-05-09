@@ -1,18 +1,16 @@
-name: "Merge ready check"
-
+name: "Pull Request Labeler"
 on:
-  pull_request_review:
-    types: [submitted]
-    branches:
+  pull_request:
+    branch:
       - development
 
 jobs:
-  approved:
-    if: github.event.review.state == 'approved'
+  triage:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: srvaroa/labeler@v0.8
-        with:
-          config_path: .github/approved_labels.yml
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    - uses: actions/labeler@v4
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
