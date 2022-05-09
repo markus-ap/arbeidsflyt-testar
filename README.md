@@ -1,6 +1,5 @@
 # arbeidsflyt-testar
 Testar av arbeidsflytar
 
-
-## Wow
-Dette er kult
+## Workflows
+Dette er ein test for readme.md-endringar og merge ready.
