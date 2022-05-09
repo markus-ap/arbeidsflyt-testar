@@ -1,8 +1,5 @@
 version: 1
 labels:
-  - label: "README changed"
+  - label: "Change"
     files:
-      - "README.md"
-  - label: "Workflow change"
-    files:
-      - ".github/**/*"
+      - "*"
