@@ -1,3 +1,2 @@
-version: 1
-labels:
-  - label: "Merge ready"
+"Merge ready":
+- "**/*"
