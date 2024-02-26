@@ -17,7 +17,7 @@ jobs:
       run: |
         echo "Starting"
         for i in $(seq 1 ${{ github.event.inputs.iter }}); do
-            echo ipv4=`curl ifconfig.me`
+            ipv4=`curl ifconfig.me`
             echo $ipv4
         done
         echo "Done"
