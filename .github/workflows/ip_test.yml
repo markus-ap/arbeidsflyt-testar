@@ -25,6 +25,18 @@ jobs:
         echo "Unique IP addresses:"
         echo "${unique_ips[@]}"
         echo "Done"
+    - name: Find public IP 2
+      run: |
+        echo "Starting"
+        ips=()
+        for i in $(seq 1 ${{ github.event.inputs.iter }}); do
+            ipv4=`curl -s ifconfig.me`
+            ips+=("$ipv4")
+        done
+        unique_ips=($(echo "${ips[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
+        echo "Unique IP addresses:"
+        echo "${unique_ips[@]}"
+        echo "Done"
 
 
 
