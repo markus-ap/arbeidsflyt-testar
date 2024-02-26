@@ -15,10 +15,12 @@ jobs:
     steps:
     - name: Find public IP
       run: |
+        echo "Starting"
         for i in $(seq 1 ${{ github.event.inputs.iter }}); do
-            echo ipv4=`curl ifconfig.me` >> "$GITHUB_OUTPUT"
+            echo ipv4=`curl ifconfig.me`
             echo $ipv4
         done
+        echo "Done"
 
 
 
