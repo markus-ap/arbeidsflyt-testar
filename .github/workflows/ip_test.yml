@@ -16,10 +16,14 @@ jobs:
     - name: Find public IP
       run: |
         echo "Starting"
+        ips=()
         for i in $(seq 1 ${{ github.event.inputs.iter }}); do
             ipv4=`curl -s ifconfig.me`
-            echo $ipv4
+            ips+=("$ipv4")
         done
+        unique_ips=($(echo "${ips[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
+        echo "Unique IP addresses:"
+        echo "${unique_ips[@]}"
         echo "Done"
 
 
