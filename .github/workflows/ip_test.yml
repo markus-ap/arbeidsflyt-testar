@@ -1,0 +1,32 @@
+name: Check IP adress
+
+on:
+  workflow_dispatch:
+    inputs:
+      iter:
+        description: 'How many times to check for IP adress'
+        required: true 
+
+
+jobs:  
+  dummy_job:
+    name: "Dummy job"  
+    runs-on: ubuntu-latest
+    steps:
+    - name: Find public IP
+      run: |
+        for i in $(seq 1 ${{ github.event.inputs.iter }}); do
+            echo ipv4=`curl ifconfig.me` >> "$GITHUB_OUTPUT"
+            echo $ipv4
+        done
+
+
+
+    
+        
+
+
+###################################
+# deploy code Bravo Fam Mover - V2
+# migrate database and RDFox  - V2     
+###################################
